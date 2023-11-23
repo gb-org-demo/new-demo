@@ -24,7 +24,10 @@ jobs:
               - '**.md'
               - docs/**
               - README.md
-
+      - name: Dump chnages
+        env:
+          GITHUB_CONTEXT: ${{ toJSON( steps.changed-files-yaml.outputs) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: fail step if test file(s) change
         # NOTE: Ensure all outputs are prefixed by the same key used above e.g. `test_(...)` | `doc_(...)` | `src_(...)` when trying to access the `any_changed` output.
         if: steps.changed-files-yaml.outputs.test_any_changed == 'true'  
