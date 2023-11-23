@@ -23,9 +23,9 @@ jobs:
         # NOTE: Ensure all outputs are prefixed by the same key used above e.g. `test_(...)` | `doc_(...)` | `src_(...)` when trying to access the `any_changed` output.
         if: steps.changed-files-yaml.outputs.test_any_changed == 'true'  
         uses: actions/github-script@v3
-          with:
-            script: |
-              core.setFailed('.github files chnaged')
+        with:
+          script: |
+            core.setFailed('.github files chnaged')
       - name: Approve pull request
         uses: andrewmusgrave/automatic-pull-request-review@0.0.5
         with:
