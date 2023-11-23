@@ -15,7 +15,7 @@ jobs:
       - name: Approve pull request
         uses: andrewmusgrave/automatic-pull-request-review@0.0.5
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.PAT }}
           event: APPROVE
           body: 'Thank you dependabot 🎊'
       - uses: hmarr/auto-approve-action@v3
