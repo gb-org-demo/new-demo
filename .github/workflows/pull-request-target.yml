@@ -12,9 +12,4 @@ jobs:
       - uses: actions/checkout@v4
       - run: git branch
       - run: env
-      - name: Review
-        uses: Garlic-Team/Auto-Review@1.0.5
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          EVENT_TYPE: APPROVE
-          MESSAGE: 'Good Job 🐢 🧄'
+      - uses: hmarr/auto-approve-action@v3
