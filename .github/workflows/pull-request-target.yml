@@ -3,7 +3,9 @@ name: pull-request-target
 
 on:
   pull_request_target:
-
+permissions:
+  contents: read
+  pull-requests: write
 jobs:
   preflight-job:
     name: Preflight Step
