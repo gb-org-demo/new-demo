@@ -14,9 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.workflow_run.head_branch }}
       - run: git branch
       - run: env
       - run: echo ${{ github.event.number }}
         name: event.number
+      - name: Set reviewers or merge
+        uses: sigyl-actions/auto-review-action@master
+        with:
+          scheme-file: review-scheme.yml
