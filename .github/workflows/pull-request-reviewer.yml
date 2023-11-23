@@ -1,5 +1,5 @@
 ---
-name: Test
+name: pull-request-reviewer
 
 on:
   pull_request_review:

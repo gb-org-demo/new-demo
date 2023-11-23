@@ -1,5 +1,5 @@
 ---
-name: Preflight
+name: pull-request-target
 
 on:
   pull_request_target:
@@ -9,7 +9,8 @@ jobs:
     name: Preflight Step
     runs-on: ubuntu-latest
     steps:
-      - run: env
+      - uses: actions/checkout@v4
+      - run: git branch
       - run: env
       - name: Review
         uses: Garlic-Team/Auto-Review@1.0.5
