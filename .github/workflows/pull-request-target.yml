@@ -1,5 +1,5 @@
 ---
-name: pull-request
+name: pull-request-target
 
 on:
   pull_request_target:
@@ -18,10 +18,3 @@ jobs:
           repo-token: ${{ secrets.PAT }}
           event: APPROVE
           body: 'Thank you dependabot 🎊'
-      - uses: hmarr/auto-approve-action@v3
-      - name: Review
-        uses: Garlic-Team/Auto-Review@1.0.5
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          EVENT_TYPE: APPROVE
-          MESSAGE: 'Good Job 🐢 🧄'
