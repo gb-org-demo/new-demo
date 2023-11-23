@@ -20,7 +20,9 @@ jobs:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"    
+        run: echo "$GITHUB_CONTEXT"
+      - name: default branch
+        run: echo ${{ github.event.repository.default_branch }}
       - name: Set reviewers or merge
         uses: sigyl-actions/auto-review-action@master
         with:
