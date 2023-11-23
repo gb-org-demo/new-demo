@@ -12,3 +12,9 @@ jobs:
     steps:
       - run: env
       - run: env
+      - name: Review
+        uses: Garlic-Team/Auto-Review@1.0.5
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENT_TYPE: APPROVE
+          MESSAGE: 'Good Job 🐢 🧄'
