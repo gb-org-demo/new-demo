@@ -12,6 +12,12 @@ jobs:
       - uses: actions/checkout@v4
       - run: git branch
       - run: env
+      - name: Approve pull request
+        uses: andrewmusgrave/automatic-pull-request-review@0.0.5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          event: APPROVE
+          body: 'Thank you dependabot 🎊'
       - uses: hmarr/auto-approve-action@v3
       - name: Review
         uses: Garlic-Team/Auto-Review@1.0.5
