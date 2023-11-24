@@ -31,9 +31,9 @@ jobs:
         with:
           script: |
             core.setFailed('.github files changed')
-      - uses: actions/github-action-request-reviews
+      - uses: actions/github-action-request-reviews@main
         with:
-          pr: github.event.pull_request.number
+          pr: ${{github.event.pull_request.number}}
           teams: b2,b3
 
 

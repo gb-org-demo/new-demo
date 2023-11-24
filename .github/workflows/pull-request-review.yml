@@ -20,9 +20,9 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: default branch
         run: echo ${{ github.event.repository.default_branch }}
-            - uses: actions/github-action-request-reviews
+      - uses: actions/github-action-request-reviews@main
         with:
-          pr: github.event.pull_request.number
+          pr: ${{ github.event.pull_request.number }}
           teams: b2,b3
       #- name: Set reviewers or merge
       #  uses: sigyl-actions/auto-review-action@master
