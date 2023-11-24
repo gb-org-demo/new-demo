@@ -22,7 +22,7 @@ jobs:
         run: echo ${{ github.event.repository.default_branch }}
       - uses: sigyl-actions/github-action-request-reviews@main
         with:
-          token: ${{ secrets:PAT }}
+          token: ${{ secrets.PAT }}
           pr: ${{ github.event.pull_request.number }}
           teams: b2,b3
       #- name: Set reviewers or merge
