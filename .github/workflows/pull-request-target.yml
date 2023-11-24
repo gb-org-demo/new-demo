@@ -34,3 +34,4 @@ jobs:
       - uses: hmarr/auto-approve-action@v3
         with:
           review-message: 'ready for review'
+          token: ${{ secrets.PAT }}
