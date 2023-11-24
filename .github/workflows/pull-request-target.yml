@@ -31,3 +31,6 @@ jobs:
         with:
           script: |
             core.setFailed('.github files changed')
+      - uses: hmarr/auto-approve-action@v3
+        with:
+          review-message: 'ready for review'
