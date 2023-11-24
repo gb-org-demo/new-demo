@@ -31,4 +31,9 @@ jobs:
         with:
           script: |
             core.setFailed('.github files changed')
-      - uses: kentaro-m/auto-assign-action@v1.2.5
+      - uses: actions/github-action-request-reviews
+        with:
+          pr: github.event.pull_request.number
+          teams: b2,b3
+
+

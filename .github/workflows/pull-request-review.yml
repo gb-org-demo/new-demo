@@ -20,9 +20,10 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: default branch
         run: echo ${{ github.event.repository.default_branch }}
-      - uses: kentaro-m/auto-assign-action@v1.2.5
+            - uses: actions/github-action-request-reviews
         with:
-          configuration-path: '.github/auto_assign-2.yml' # Only needed if you use something other than .github/auto_assign.yml
+          pr: github.event.pull_request.number
+          teams: b2,b3
       #- name: Set reviewers or merge
       #  uses: sigyl-actions/auto-review-action@master
       #  with:
